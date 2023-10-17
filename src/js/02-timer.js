@@ -14,7 +14,7 @@ const selectors = {
  minute: document.querySelector('[data-minutes]'),
  second: document.querySelector('[data-seconds]'),
 }
-currentTime = new Date();
+const currentTime = new Date();
 
 let timerId = null;
 
@@ -22,7 +22,7 @@ function countdownTimer() {
   futureTime = new Date(input.value);
   let targetTime = futureTime - currentTime;
 
-  timerId = setInterval(() => {
+ const timerId = setInterval(() => {
     const convertedData =  convertMs(targetTime);
     selectors.day.textContent = addLeadingZero(convertedData.days);
     selectors.hour.textContent = addLeadingZero(convertedData.hours);
