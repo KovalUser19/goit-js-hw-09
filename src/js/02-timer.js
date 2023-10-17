@@ -14,7 +14,7 @@ const selectors = {
  minute: document.querySelector('[data-minutes]'),
  second: document.querySelector('[data-seconds]'),
 }
-currentTime = Date.now();
+currentTime = new Date();
 
 let timerId = null;
 
@@ -31,7 +31,7 @@ function countdownTimer() {
     targetTime -= 1000;
     console.log(convertedData);
   }, 1000)
-  if (targetTime === 0) {
+   if (targetTime === 0) {
     clearInterval(timerId);
   }
 }
