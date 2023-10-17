@@ -19,7 +19,7 @@ const currentTime = new Date();
 let timerId = null;
 
 function countdownTimer() {
-  futureTime = new Date(input.value);
+ let futureTime = new Date(input.value);
   let targetTime = futureTime - currentTime;
 
  const timerId = setInterval(() => {
