@@ -1,15 +1,14 @@
 import Notiflix from "notiflix";
+
 const form = document.querySelector('.form');
 form.addEventListener('submit', onClickSubmit);
 
 function onClickSubmit(e) {
   e.preventDefault();
   const { delay, step, amount } = e.target;
-
   for (let i = 1; i <= amount.value; i++) {
-    let delayStep = Number(delay.value) + step.value*i;
-    console.log(delayStep);
-    createPromise(i, delayStep)
+    let delayPlusStep = Number(delay.value) + step.value * i;
+    createPromise(i, delayPlusStep)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
